@@ -1,0 +1,263 @@
+/* Reset de márgenes y padding para tener control total sobre el diseño */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Fondo de pantalla para todo el sitio */
+  body {
+    background: linear-gradient(135deg, #ff61a6, #9a4dff, #00bcd4);
+    background-size: 300% 300%;
+    animation: gradientBackground 6s ease infinite;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Animación del fondo */
+  @keyframes gradientBackground {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  /* Encabezado con logo y navegación */
+  header {
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 2px;
+  }
+  
+  /* Estilo para los enlaces del encabezado */
+  header nav {
+    margin-top: 15px;
+  }
+  
+  header nav a {
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+  }
+  
+  header nav a:hover {
+    color: #ff61a6;
+  }
+  
+  /* Sección principal que incluye las páginas */
+  main {
+    flex-grow: 1;
+    padding: 40px 15px;
+    text-align: center;
+  }
+  
+  /* Estilos para las secciones de las páginas */
+  h1, h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilo para los botones principales */
+  button {
+    background-color: #ff61a6;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    font-size: 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #9a4dff;
+  }
+  
+  /* Pie de página */
+  footer {
+    background-color: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    padding: 10px;
+    margin-top: 30px;
+  }
+  
+  /* Lista de canciones - tarjetas */
+  .song-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .song-card {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    border-radius: 10px;
+    width: 200px;
+    transition: transform 0.3s ease;
+  }
+  
+  .song-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .song-card h3 {
+    font-size: 1.2rem;
+    color: #ff61a6;
+  }
+  
+  .song-card p {
+    font-size: 1rem;
+    color: white;
+  }
+  
+  /* Estilos específicos para el reproductor de música */
+  .music-player {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
+  
+  .song-info {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .song-cover {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .song-info h3 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+  }
+  
+  .song-info p {
+    font-size: 1.1rem;
+    color: #bbb;
+  }
+  
+  /* Controles del reproductor */
+  .player-controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .player-controls button {
+    font-size: 2rem;
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  
+  .player-controls button:hover {
+    transform: scale(1.2);
+  }
+  
+  .progress-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+  }
+  
+  input[type="range"] {
+    width: 100%;
+    background-color: #bbb;
+    height: 5px;
+    border-radius: 5px;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  input[type="range"]:focus {
+    background-color: #ff61a6;
+  }
+  
+  /* Opciones personalizadas del reproductor */
+  .custom-options {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  /* Responsive - Estilos para dispositivos pequeños */
+  @media (max-width: 768px) {
+    header h1 {
+      font-size: 2rem;
+    }
+  
+    header nav a {
+      font-size: 1rem;
+      margin: 0 10px;
+    }
+  
+    .song-card {
+      width: 45%;
+    }
+  
+    .music-player {
+      width: 90%;
+      padding: 20px;
+    }
+  }
+  
+  /* Responsive - Estilos para dispositivos muy pequeños */
+  @media (max-width: 480px) {
+    header h1 {
+      font-size: 1.5rem;
+    }
+  
+    header nav {
+      display: block;
+      margin-top: 10px;
+    }
+  
+    header nav a {
+      display: block;
+      margin: 10px 0;
+    }
+  
+    .song-card {
+      width: 100%;
+    }
+  
+    .music-player {
+      width: 100%;
+      padding: 15px;
+    }
+  }
+  
